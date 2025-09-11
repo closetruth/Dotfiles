@@ -22,6 +22,8 @@ i  coreutils - GNU core utilities
 i  cpio - GNU cpio -- a program to manage archives of files
 i  cron - process scheduling daemon
 i  cron-daemon-common - process scheduling daemon's configuration files
+i  cryptsetup - disk encryption support - startup scripts
+i  cryptsetup-suspend - disk encryption support - suspend mode integration
 i  curl - command line tool for transferring data with URL syntax
 i  dash - POSIX-compliant shell
 i  debconf - Debian configuration management system
@@ -41,6 +43,7 @@ i  fcitx5-chinese-addons - Chinese-related addon for fcitx5 (metapackage)
 i  fcitx5-material-color - UI theme for fcitx5 following Material Design
 i  fdisk - collection of partitioning utilities
 i  findutils - utilities for finding files--find, xargs
+i  fio - flexible I/O tester
 i  firefox-esr - Mozilla Firefox web browser - Extended Support Release (ESR)
 i  firmware-iwlwifi - Binary firmware for Intel Wireless cards
 i  firmware-linux - Binary firmware for various drivers in the Linux kernel (metapackage)
@@ -171,6 +174,7 @@ i  libxtables12 - netfilter xtables library
 i  libxxhash0 - shared library for xxhash
 i  libzstd1 - fast lossless compression algorithm
 i  linux-image-amd64 - Linux for 64-bit PCs (meta-package)
+i  linux-perf - Performance analysis tools for Linux
 i  locales - GNU C Library: National Language (locale) data [support]
 i  login - system login tools
 i  logrotate - Log rotation utility
@@ -195,6 +199,7 @@ i  openssh-server - secure shell (SSH) server, for secure access from remote mac
 i  openssl - Secure Sockets Layer toolkit - cryptographic utility
 i  p7zip - 7zr file archiver with high compression ratio
 i  p7zip-full - 7z and 7za file archivers with high compression ratio
+i  pandoc - general markup converter
 i  passwd - change and administer password and group data
 i  pavucontrol - PulseAudio Volume Control
 i  perl-base - minimal Perl system
@@ -215,6 +220,7 @@ i  sensible-utils - Utilities for sensible alternative selection
 i  sudo - Provide limited super user privileges to specific users
 i  sway - i3-compatible Wayland compositor
 i  swaylock - Screen locker for Wayland
+i  sysstat - system performance tools for Linux
 i  systemd - system and service manager
 i  systemd-sysv - system and service manager - SysV compatibility symlinks
 i  sysvinit-utils - System-V-like utilities
