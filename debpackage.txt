@@ -3,6 +3,7 @@ i  alsa-utils - Utilities for configuring and using ALSA
 i  android-file-transfer - reliable MTP client with minimalistic UI
 i  apt - commandline package manager
 i  apt-file - search for files within Debian packages (command-line interface)
+i  apt-forktracer - utility for tracking non-official package versions
 i  apt-rdepends - recursively lists package dependencies
 i  apt-utils - package management related utility programs
 i  aptitude - terminal-based package manager
@@ -16,7 +17,6 @@ i  btrfs-progs - Checksumming Copy on Write Filesystem utilities
 i  build-essential - Informational list of build-essential packages
 i  ca-certificates - Common CA certificates
 i  clang - C, C++ and Objective-C compiler (LLVM based), clang binary
-i  clangd-16 - Language server that provides IDE-like features to editors
 i  copyq - Advanced clipboard manager with editing and scripting features
 i  coreutils - GNU core utilities
 i  cpio - GNU cpio -- a program to manage archives of files
@@ -28,9 +28,9 @@ i  curl - command line tool for transferring data with URL syntax
 i  dash - POSIX-compliant shell
 i  debconf - Debian configuration management system
 i  debconf-i18n - full internationalization support for debconf
-i  debian-archive-keyring - GnuPG archive keys of the Debian archive
+i  debian-archive-keyring - OpenPGP archive certificates of the Debian archive
 i  debianutils - Miscellaneous utilities specific to Debian
-i  dhcpcd - DHCPv4 and DHCPv6 dual-stack client (init.d script and systemd unit)
+i  dhcpcd - DHCPv4 and DHCPv6 dual-stack client (init.d script & systemd unit)
 i  diffutils - File comparison utilities
 i  distrobox - Another tool for containerized command line environments on Linux
 i  dmidecode - SMBIOS/DMI table decoder
@@ -38,7 +38,7 @@ i  dmsetup - Linux Kernel Device Mapper userspace library
 i  dpkg - Debian package management system
 i  e2fsprogs - ext2/ext3/ext4 file system utilities
 i  evince - Document (PostScript, PDF) viewer
-i  fcitx5 - Next generation of Fcitx Input Method Framework
+i  fcitx5 - Fcitx Input Method Framework v5
 i  fcitx5-chinese-addons - Chinese-related addon for fcitx5 (metapackage)
 i  fcitx5-material-color - UI theme for fcitx5 following Material Design
 i  fdisk - collection of partitioning utilities
@@ -55,7 +55,8 @@ i  gcc-12-base - GCC, the GNU Compiler Collection (base package)
 i  git - fast, scalable, distributed revision control system
 i  gnome-system-monitor - Process viewer and system resource monitor for GNOME
 i  gnome-themes-extra - Adwaita GTK 2 theme — engine
-i  goldendict - feature-rich dictionary lookup program
+i  gnome-tweaks - tool to adjust advanced configuration settings for GNOME
+i  goldendict - transitional package
 i  gpgv - GNU privacy guard - signature verification tool
 i  grep - GNU grep, egrep and fgrep
 i  grimshot - Easy to use screenshot tool for sway
@@ -69,14 +70,13 @@ i  init - metapackage ensuring an init system is installed
 i  init-system-helpers - helper tools for all init systems
 i  iproute2 - networking and traffic control tools
 i  iputils-ping - Tools to test the reachability of network hosts
-i  isc-dhcp-client - DHCP client for automatically obtaining an IP address
-i  isc-dhcp-common - common manpages relevant to all of the isc-dhcp packages
+i  isc-dhcp-client - DHCP client for automatically obtaining an IP address (deprecated)
+i  isc-dhcp-common - common manpages relevant to all of the isc-dhcp packages (deprecated)
 i  jq - lightweight and flexible command-line JSON processor
 i  kmod - tools for managing Linux kernel modules
 i  less - pager program similar to more
 i  libacl1 - access control list - shared library
 i  libapparmor1 - changehat AppArmor library
-i  libapt-pkg6.0 - package management runtime library
 i  libargon2-1 - memory-hard hashing function - runtime library
 i  libattr1 - extended attribute handling - shared library
 i  libaudit-common - Dynamic library for security auditing - common files
@@ -94,22 +94,17 @@ i  libcap2-bin - POSIX 1003.1e capabilities (utilities)
 i  libcom-err2 - common error description library
 i  libcrypt1 - libcrypt shared library
 i  libcryptsetup12 - disk encryption support - shared library
-i  libdb5.3 - Berkeley v5.3 Database Libraries [runtime]
 i  libdebconfclient0 - Debian Configuration Management System (C-implementation library)
 i  libdevmapper1.02.1 - Linux Kernel Device Mapper userspace library
 i  libedit2 - BSD editline and history libraries
-i  libelf1 - library to read and write ELF files
-i  libext2fs2 - ext2/ext3/ext4 file system libraries
 i  libfdisk1 - fdisk partitioning library
 i  libffi-dev - Foreign Function Interface library (development files)
 i  libffi8 - Foreign Function Interface library runtime
 i  libgcc-s1 - GCC support library
 i  libgcrypt20 - LGPL Crypto library - runtime library
 i  libgmp10 - Multiprecision arithmetic library
-i  libgnutls30 - GNU TLS library - main runtime library
 i  libgpg-error0 - GnuPG development runtime library
 i  libgssapi-krb5-2 - MIT Kerberos runtime libraries - krb5 GSS-API Mechanism
-i  libhogweed6 - low level cryptographic library (public-key cryptos)
 i  libidn2-0 - Internationalized domain names (IDNA2008/TR46) library
 i  libip4tc2 - netfilter libip4tc library
 i  libjansson4 - C library for encoding, decoding and manipulating JSON data
@@ -126,9 +121,7 @@ i  liblzma5 - XZ-format compression library
 i  libmd0 - message digest functions from BSD systems - shared library
 i  libmnl0 - minimalistic Netlink communication library
 i  libmount1 - device mounting library
-i  libncursesw5-dev - transitional package for libncurses-dev
 i  libncursesw6 - shared libraries for terminal handling (wide character support)
-i  libnettle8 - low level cryptographic library (symmetric and one-way cryptos)
 i  libnewt0.52 - Not Erik's Windowing Toolkit - text mode windowing with slang
 i  libnftables1 - Netfilter nftables high level userspace API library
 i  libnftnl11 - Netfilter nftables userspace API library
@@ -141,7 +134,6 @@ i  libpcre2-8-0 - New Perl Compatible Regular Expression Library- 8 bit runtime 
 i  libpopt0 - lib for parsing cmdline parameters
 i  libproc2-0 - library for accessing process information from /proc
 i  libreadline-dev - GNU readline and history libraries, development files
-i  libreadline8 - GNU readline and history libraries, run-time libraries
 i  libreoffice - office productivity suite (metapackage)
 i  libreoffice-gtk3 - office productivity suite -- GTK+ 3 integration
 i  libseccomp2 - high level interface to Linux seccomp filter
@@ -154,7 +146,6 @@ i  libsmartcols1 - smart column output alignment library
 i  libsqlite3-dev - SQLite 3 development files
 i  libss2 - command-line interface parsing library
 i  libssl-dev - Secure Sockets Layer toolkit - development files
-i  libssl3 - Secure Sockets Layer toolkit - shared libraries
 i  libstdc++6 - GNU Standard C++ Library v3
 i  libsystemd-shared - systemd shared private library
 i  libsystemd0 - systemd utility library
@@ -164,9 +155,7 @@ i  libtext-iconv-perl - module to convert between character sets in Perl
 i  libtext-wrapi18n-perl - internationalized substitute of Text::Wrap
 i  libtinfo6 - shared low-level terminfo library for terminal handling
 i  libtirpc-common - transport-independent RPC library - common files
-i  libtirpc3 - transport-independent RPC library
 i  libudev1 - libudev shared library
-i  libunistring2 - Unicode string library for C
 i  libuuid1 - Universally Unique ID library
 i  libxml2-dev - GNOME XML library - development files
 i  libxmlsec1-dev - Development files for the XML security library
@@ -179,6 +168,7 @@ i  locales - GNU C Library: National Language (locale) data [support]
 i  login - system login tools
 i  logrotate - Log rotation utility
 i  logsave - save the output of a command in a log file
+i  lxappearance - LXDE GTK+ theme switcher
 i  lzip - lossless data compressor based on the LZMA algorithm
 i  mako-notifier - lightweight notification daemon for Wayland compositors
 i  mawk - Pattern scanning and text processing language
@@ -187,28 +177,26 @@ i  mpv - video player based on MPlayer/mplayer2
 i  nano - small, friendly text editor inspired by Pico
 i  ncurses-base - basic terminal type definitions
 i  ncurses-bin - terminal-related programs and man pages
-i  neofetch - Shows Linux System Information with Distribution Logo
+i  neowofetch - Shows Linux System Information with Distribution Logo
 i  net-tools - NET-3 networking toolkit
 i  netbase - Basic TCP/IP networking system
 i  network-manager - network management framework (daemon and userspace tools)
 i  nftables - Program to control packet filtering rules by Netfilter project
 i  nmap - The Network Mapper
 i  npm - package manager for Node.js
-i  ntpdate - Network Time Protocol client (transitional package)
 i  openssh-server - secure shell (SSH) server, for secure access from remote machines
 i  openssl - Secure Sockets Layer toolkit - cryptographic utility
-i  p7zip - 7zr file archiver with high compression ratio
-i  p7zip-full - 7z and 7za file archivers with high compression ratio
+i  p7zip - transitional package
+i  p7zip-full - transitional package
 i  pandoc - general markup converter
 i  passwd - change and administer password and group data
 i  pavucontrol - PulseAudio Volume Control
 i  perl-base - minimal Perl system
 i  procps - /proc file system utilities
 i  proxychains4 - redirect connections through socks/http proxies (proxychains-ng)
-i  pulseaudio - PulseAudio sound server
 i  python3-tk - Tkinter - Writing Tk applications with Python 3.x
 i  python3-venv - venv module for python3 (default python3 version)
-i  qemu-user-static - QEMU user mode emulation binaries (static version)
+i  qemu-user-static - QEMU user mode emulation (compat/transitional package)
 i  qt5ct - Qt5 Configuration Utility
 i  qt6ct - Qt6 Configuration Tool
 i  readline-common - GNU readline and history libraries, common files
@@ -217,6 +205,7 @@ i  ristretto - lightweight picture-viewer for the Xfce desktop environment
 i  seatd - minimal user, seat and session management daemon
 i  sed - GNU stream editor for filtering/transforming text
 i  sensible-utils - Utilities for sensible alternative selection
+i  suckless-tools - simple commands for minimalistic window managers
 i  sudo - Provide limited super user privileges to specific users
 i  sway - i3-compatible Wayland compositor
 i  swaylock - Screen locker for Wayland
@@ -248,13 +237,12 @@ i  wayvnc - VNC server for wlroots-based Wayland compositors
 i  wf-recorder - Utility program for screen recording of wlroots-based compositors
 i  wget - retrieves files from the web
 i  whiptail - Displays user-friendly dialog boxes from shell scripts
-i  wireshark-qt - network traffic analyzer - Qt version
 i  wl-clipboard - command line interface to the wayland clipboard
 i  wofi - application launcher for wlroots based wayland compositors
 i  xfce4-settings - graphical application for managing Xfce settings
 i  xfce4-terminal - Xfce terminal emulator
 i  xwayland - X server for running X clients under Wayland
 i  xz-utils - XZ-format compression utilities
-i  yarnpkg - Fast, reliable and secure npm alternative
+i  yarnpkg - Fast, reliable, and secure dependency management
 i  zlib1g - compression library - runtime
 i  zlib1g-dev - compression library - development
