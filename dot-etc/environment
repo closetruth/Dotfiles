@@ -7,7 +7,7 @@ GTK_IM_MODULE=fcitx
 QT_IM_MODULE=fcitx
 
 # wofi
-XDG_DATA_DIRS=/usr/local/share/:/usr/share/:/usr/local/bin
+XDG_DATA_DIRS=/usr/local/share/:/usr/share/
 
 # dark gtk theme
 GTK_THEME=Adwaita:dark
