@@ -57,6 +57,7 @@ i  gnome-system-monitor - Process viewer and system resource monitor for GNOME
 i  gnome-themes-extra - Adwaita GTK 2 theme — engine
 i  gnome-tweaks - tool to adjust advanced configuration settings for GNOME
 i  goldendict - transitional package
+i  gparted - GNOME partition editor
 i  gpgv - GNU privacy guard - signature verification tool
 i  grep - GNU grep, egrep and fgrep
 i  grimshot - Easy to use screenshot tool for sway
@@ -125,6 +126,7 @@ i  libncursesw6 - shared libraries for terminal handling (wide character support
 i  libnewt0.52 - Not Erik's Windowing Toolkit - text mode windowing with slang
 i  libnftables1 - Netfilter nftables high level userspace API library
 i  libnftnl11 - Netfilter nftables userspace API library
+i  libnss3 - Network Security Service libraries
 i  libp11-kit0 - library for loading and coordinating access to PKCS#11 modules - runtime
 i  libpam-modules - Pluggable Authentication Modules for PAM
 i  libpam-modules-bin - Pluggable Authentication Modules for PAM - helper binaries
@@ -157,6 +159,8 @@ i  libtinfo6 - shared low-level terminfo library for terminal handling
 i  libtirpc-common - transport-independent RPC library - common files
 i  libudev1 - libudev shared library
 i  libuuid1 - Universally Unique ID library
+i  libxcb-cursor0 - utility libraries for X C Binding -- cursor
+i  libxcb-xinerama0 - X C Binding, xinerama extension
 i  libxml2-dev - GNOME XML library - development files
 i  libxmlsec1-dev - Development files for the XML security library
 i  libxtables12 - netfilter xtables library
@@ -192,6 +196,7 @@ i  pandoc - general markup converter
 i  passwd - change and administer password and group data
 i  pavucontrol - PulseAudio Volume Control
 i  perl-base - minimal Perl system
+i  pkexec - run commands as another user with polkit authorization
 i  procps - /proc file system utilities
 i  proxychains4 - redirect connections through socks/http proxies (proxychains-ng)
 i  python3-tk - Tkinter - Writing Tk applications with Python 3.x
@@ -205,6 +210,8 @@ i  ristretto - lightweight picture-viewer for the Xfce desktop environment
 i  seatd - minimal user, seat and session management daemon
 i  sed - GNU stream editor for filtering/transforming text
 i  sensible-utils - Utilities for sensible alternative selection
+i  smartmontools - control and monitor storage systems using S.M.A.R.T.
+i  stress-ng - tool to load and stress a computer
 i  suckless-tools - simple commands for minimalistic window managers
 i  sudo - Provide limited super user privileges to specific users
 i  sway - i3-compatible Wayland compositor

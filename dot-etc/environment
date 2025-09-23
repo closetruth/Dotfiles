@@ -1,12 +1,14 @@
-#qt5ct
+# qt5ct
 QT_QPA_PLATFORMTHEME=qt5ct
 
-#fcitx5
+# fcitx5
 XMODIFIERS=@im=fcitx
 GTK_IM_MODULE=fcitx
 QT_IM_MODULE=fcitx
 
-#wofi
-XDG_DATA_DIRS=/home/h/.local/share/flatpak/exports/share:/usr/local/share/:/usr/share/
+# wofi
+XDG_DATA_DIRS=/usr/local/share/:/usr/share/:/usr/local/bin
 
+# dark gtk theme
+GTK_THEME=Adwaita:dark
 
