@@ -1,0 +1,20 @@
+[Unit]
+Description=Auto Script
+#After=multi-user.target
+After=getty@tty1.service
+Requires=getty@tty1.service
+
+[Service]
+Type=oneshot
+
+ExecStart=/usr/local/bin/startup-auto.bash
+
+# 避免超时等待
+TimeoutStartSec=0      
+
+# 服务执行后不保留状态
+RemainAfterExit=no      
+
+[Install]
+WantedBy=multi-user.target
+

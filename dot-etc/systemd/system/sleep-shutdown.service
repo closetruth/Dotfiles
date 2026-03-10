@@ -4,8 +4,6 @@ Description=Sleep ShutDown
 After=network.target  
 
 [Service]
-Type=oneshot
-
 # 脚本
 ExecStart=/usr/local/bin/sleep-shutdown.bash  
 
@@ -18,3 +16,4 @@ RemainAfterExit=no
 [Install]
 # 在系统启动到多用户模式时触发
 WantedBy=multi-user.target  
+
