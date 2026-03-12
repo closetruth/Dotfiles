@@ -7,7 +7,8 @@ sleep 2
 swaymsg workspace 2 && swaymsg exec firefox-dev
 sleep 2
 
-swaymsg workspace 3 && swaymsg exec firefox-esr
+# swaymsg workspace 3 && swaymsg exec firefox-esr
+swaymsg workspace 3 && swaymsg exec firefox-esr.bash
 sleep 2
 
 swaymsg workspace 1
