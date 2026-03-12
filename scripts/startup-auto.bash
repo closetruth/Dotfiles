@@ -36,8 +36,9 @@ start_ops() {
 }
 
 
-ydotoold &
+/opt/activitywatch/aw-server/aw-server
 
+ydotoold &
 
 pre_start_h-learn
 

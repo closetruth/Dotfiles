@@ -1,0 +1,7 @@
+include /etc/sway/set.d/set.conf
+include /etc/sway/set.d/*
+include ~/.config/sway/user-set.d/*
+
+include /etc/sway/config-vars.d/*
+include /etc/sway/config.d/50-systemd-user.conf 
+
