@@ -35,14 +35,40 @@ start_ops() {
 
 }
 
+switch_activitywatch() {
+current=""
 
-/opt/activitywatch/aw-server/aw-server
+while true; do
+    tty=$(cat /sys/class/tty/tty0/active)
+    user=$(who | awk -v t="$tty" '$2==t {print $1}')
+
+    if [ "$user" != "$current" ]; then
+        echo "Switch to $user"
+
+        if [ -n "$current" ]; then
+            sudo -u "$current" pkill -f aw-watcher
+        fi
+
+        if [ -n "$user" ]; then
+            sudo -u "$user" aw-watcher-window &
+        fi
+
+        current="$user"
+    fi
+
+    sleep 2
+done
+
+}
+
+
+runuser -u pub /opt/activitywatch/aw-server//aw-server &
+
+
+# switch_activitywatch
 
 ydotoold &
 
 pre_start_h-learn
 
 start_ops
-
-
-
