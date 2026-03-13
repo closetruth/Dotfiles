@@ -80,7 +80,7 @@ done
 
 sudo runuser -u pub /opt/activitywatch/aw-server//aw-server &
 
-switch_activitywatch
+switch_activitywatch &
 
 ydotoold &
 
