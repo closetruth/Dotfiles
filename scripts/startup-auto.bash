@@ -78,12 +78,12 @@ while true; do
 done
 }
 
-# sudo runuser -u pub /opt/activitywatch/aw-server//aw-server &
+sudo runuser -u pub /opt/activitywatch/aw-server//aw-server &
 
 switch_activitywatch
 
-# ydotoold &
+ydotoold &
 
-# pre_start_h-learn
+pre_start_h-learn
 
-# start_ops
+start_ops
