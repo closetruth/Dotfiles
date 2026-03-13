@@ -36,39 +36,54 @@ start_ops() {
 }
 
 switch_activitywatch() {
+
 current=""
 
 while true; do
+
     tty=$(cat /sys/class/tty/tty0/active)
     user=$(who | awk -v t="$tty" '$2==t {print $1}')
 
     if [ "$user" != "$current" ]; then
+
         echo "Switch to $user"
 
         if [ -n "$current" ]; then
-            sudo -u "$current" pkill -f aw-watcher
+            pkill -u "$current" -f aw-watcher-window-wayland
         fi
 
         if [ -n "$user" ]; then
-            sudo -u "$user" aw-watcher-window &
+
+            uid=$(id -u "$user")
+
+            if [ -S "/run/user/$uid/wayland-1" ]; then
+
+                sudo runuser -u "$user" -- env \
+                XDG_RUNTIME_DIR=/run/user/$uid \
+                WAYLAND_DISPLAY=wayland-1 \
+                /opt/activitywatch/aw-watcher-window-wayland/target/release/aw-watcher-window-wayland &
+
+            else
+                echo "No wayland for $user"
+            fi
+
         fi
 
         current="$user"
+
     fi
 
     sleep 2
-done
 
+done
 }
 
+# sudo runuser -u pub /opt/activitywatch/aw-server//aw-server &
 
-runuser -u pub /opt/activitywatch/aw-server//aw-server &
+switch_activitywatch
 
+# ydotoold &
 
-# switch_activitywatch
+# pre_start_h-learn
 
-ydotoold &
-
-pre_start_h-learn
-
-start_ops
+# start_ops
