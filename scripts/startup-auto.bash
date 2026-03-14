@@ -43,30 +43,54 @@ while true; do
 
     tty=$(cat /sys/class/tty/tty0/active)
     user=$(who | awk -v t="$tty" '$2==t {print $1}')
+    uid=$(id -u "$user")
+
+    if ! pgrep -u "$user" -f aw-watcher-window-wayland >/dev/null; then
+        echo "No aw-watcher-window-wayland for user:$user"
+        /sbin/runuser -u "$user" -- env \
+        XDG_RUNTIME_DIR=/run/user/$uid \
+        WAYLAND_DISPLAY=wayland-1 \
+        notify-send "ActivityWatch 提醒" "User:$user wayland watcher 未运行"
+
+
+        /sbin/runuser -u "$user" -- env \
+        XDG_RUNTIME_DIR=/run/user/$uid \
+        WAYLAND_DISPLAY=wayland-1 \
+        /opt/activitywatch/aw-watcher-window-wayland/target/release/aw-watcher-window-wayland &
+
+        /sbin/runuser -u "$user" -- env \
+        XDG_RUNTIME_DIR=/run/user/$uid \
+        WAYLAND_DISPLAY=wayland-1 \
+        notify-send "User:$user Wayland watcher is runing "
+    fi
+
+
+    if [ ! -S "/run/user/$uid/wayland-1" ]; then
+        echo "No wayland-1 for user:$user"
+        sleep 2
+        continue
+    fi
 
     if [ "$user" != "$current" ]; then
-
         echo "Switch to $user"
-
-        if [ -n "$current" ]; then
-            pkill -u "$current" -f aw-watcher-window-wayland
-        fi
 
         if [ -n "$user" ]; then
 
-            uid=$(id -u "$user")
-
             if [ -S "/run/user/$uid/wayland-1" ]; then
 
-                sudo runuser -u "$user" -- env \
+                /sbin/runuser -u "$user" -- env \
                 XDG_RUNTIME_DIR=/run/user/$uid \
                 WAYLAND_DISPLAY=wayland-1 \
                 /opt/activitywatch/aw-watcher-window-wayland/target/release/aw-watcher-window-wayland &
 
             else
-                echo "No wayland for $user"
+                echo "No wayland for user:$user"
             fi
 
+        fi
+
+        if [ -n "$current" ]; then
+          pkill -u "$current" -f aw-watcher-window-wayland
         fi
 
         current="$user"
@@ -78,7 +102,7 @@ while true; do
 done
 }
 
-sudo runuser -u pub /opt/activitywatch/aw-server//aw-server &
+/sbin/runuser -u pub /opt/activitywatch/aw-server//aw-server &
 
 switch_activitywatch &
 
@@ -87,3 +111,5 @@ ydotoold &
 pre_start_h-learn
 
 start_ops
+
+wait
